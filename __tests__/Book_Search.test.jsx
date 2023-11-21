@@ -15,6 +15,8 @@ import BookSearch from "../src/components/BookSearch";
 * DOM Testing Library (and other Testing Library frameworks built on top of it) exports 
 * a screen object which has every query (and a debug method). This works better with autocomplete 
 * and makes each test a little simpler to write and maintain.
+*
+* I also initialised disable testinng-library/ no-render in setup for entire file
 * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-screen-queries.md
 * @params
 *
@@ -36,6 +38,7 @@ describe("BookSearch", () => {
   });
   beforeEach(() => {
     books = JSON.parse(booksData);
+    // eslint-disable-next-line testing-library/no-render-in-setup
     render(<BookSearch books={books} />);
   });
 
