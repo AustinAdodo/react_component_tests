@@ -29,7 +29,6 @@ const BookSearch = ({ books }) => {
   });
 };
 
-
   const filteredBooks = filterBooks();
 
   return (
