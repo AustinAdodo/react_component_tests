@@ -1,0 +1,88 @@
+import React, { useState } from 'react';
+
+const BookSearch = ({ books }) => {
+  const [searchCriteria, setSearchCriteria] = useState({
+    author: '',
+    title: '',
+    country: '',
+    language: '',
+    year: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setSearchCriteria({ ...searchCriteria, [name]: value.trim() });
+  };
+
+  const filterBooks = () => {
+  return books.filter((book) => {
+    return Object.keys(searchCriteria).every((key) => {
+      const searchValue = searchCriteria[key].toLowerCase();
+      const bookValue = String(book[key]).toLowerCase(); // Ensure conversion to string
+      return bookValue.includes(searchValue);
+    });
+  });
+};
+
+
+  const filteredBooks = filterBooks();
+
+  return (
+    <div>
+      <input
+        type="text"
+        data-testid="author"
+        name="author"
+        placeholder="Search by author"
+        value={searchCriteria.author}
+        onChange={handleInputChange}
+      />
+      <input
+        type="text"
+        data-testid="title"
+        name="title"
+        placeholder="Search by title"
+        value={searchCriteria.title}
+        onChange={handleInputChange}
+      />
+      <input
+        type="text"
+        data-testid="country"
+        name="country"
+        placeholder="Search by country"
+        value={searchCriteria.country}
+        onChange={handleInputChange}
+      />
+      <input
+        type="text"
+        data-testid="language"
+        name="language"
+        placeholder="Search by language"
+        value={searchCriteria.language}
+        onChange={handleInputChange}
+      />
+      <input
+        type="text"
+        data-testid="year"
+        name="year"
+        placeholder="Search by year"
+        value={searchCriteria.year}
+        onChange={handleInputChange}
+      />
+
+      {filteredBooks.map((book, index) => (
+        <div key={index} data-testid="book">
+          <p>Author: {book.author}</p>
+          <p>Title: {book.title}</p>
+          <p>Country: {book.country}</p>
+          <p>Language: {book.language}</p>
+          <p>Year: {book.year}</p>
+          <p>Pages: {book.pages}</p>
+          <hr />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default BookSearch;
