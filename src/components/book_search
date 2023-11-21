@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 
+/**
+ * Book Search Component.
+ * @params
+ * @returns
+ */
 const BookSearch = ({ books }) => {
   const [searchCriteria, setSearchCriteria] = useState({
     author: '',
