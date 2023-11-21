@@ -1,14 +1,16 @@
+/* eslint-disable testing-library/prefer-screen-queries */
+//npm install --save-dev jest
 import {promises} from "fs";
-const {readFile} = promises;
 import React from "react";
 import {
-  fireEvent,
-  render,
-  screen,
-  within,
+    fireEvent,
+    render,
+    screen,
+    within,
 } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import BookSearch from "../src/components/BookSearch";
+const {readFile} = promises;
 const {
   getAllByTestId,
   getByTestId,
