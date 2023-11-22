@@ -9,7 +9,7 @@ import {
     within,
 } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import BookSearch from "../src/components/BookSearch";
+import BookSearch from "../src/components/Book_Search.jsx";
 
 /**
 * DOM Testing Library (and other Testing Library frameworks built on top of it) exports 
