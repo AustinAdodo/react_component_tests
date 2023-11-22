@@ -36,7 +36,7 @@ describe("BookSearch", () => {
   let books;
 
   beforeAll(async () => {
-    booksData = await readFile("./sample_data/books.json");
+    booksData = await readFile("../data_store/books.json");
   });
   beforeEach(() => {
     books = JSON.parse(booksData);
