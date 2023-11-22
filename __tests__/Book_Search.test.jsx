@@ -18,6 +18,8 @@ import BookSearch from "../src/components/BookSearch";
 *
 * I also initialised disable testinng-library/ no-render in setup for entire file
 * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-screen-queries.md
+* install the jest reporter with npm install --save-dev jest-reporter
+* it may be necessary to clear the jest cache with jest --clearCache and then re-install with npm install 
 * @params
 *
 */
