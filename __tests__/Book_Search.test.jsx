@@ -1,5 +1,5 @@
 /* eslint-disable testing-library/prefer-screen-queries */
-//npm install --save-dev jest
+
 import {promises} from "fs";
 import React from "react";
 import {
@@ -9,13 +9,14 @@ import {
     within,
 } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import BookSearch from "../src/components/Book_Search.jsx";
+import BookSearch from "../src/components/books_search.js";
 
 /**
 * DOM Testing Library (and other Testing Library frameworks built on top of it) exports 
 * a screen object which has every query (and a debug method). This works better with autocomplete 
 * and makes each test a little simpler to write and maintain.
 *
+* npm install --save-dev jest
 * I also initialised disable testinng-library/ no-render in setup for entire file
 * @see https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-screen-queries.md
 * install the jest reporter with npm install --save-dev jest-reporter
